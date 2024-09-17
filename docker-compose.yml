@@ -12,3 +12,9 @@ services:
     volumes:
       - ./realm-config/:/opt/keycloak/data/import:ro
     entrypoint: '/opt/keycloak/bin/kc.sh start-dev --import-realm' # A utiliser en développement seulement
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - 4200:4200
